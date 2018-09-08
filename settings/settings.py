@@ -1,6 +1,9 @@
 import os
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+base_path = lambda _path: os.path.join(BASE_DIR, _path)
+
 SECRET_KEY = '-c!&+d3gfd9kch5-d%*x%7%oj92li(!!#cedk@0r=rr64o_ry('
 DEBUG = False
 
@@ -49,11 +52,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wsgi.application'
 
+DEFAULT_SQLITE_DB = 'sqlite:///{}'.format(base_path('db.sqlite3'))
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config(default=DEFAULT_SQLITE_DB)
 }
 
 AUTH_PASSWORD_VALIDATORS = [
