@@ -13,7 +13,7 @@
         </div>
         <div class="panel-body">
             {{post.body | truncatewords:30}}
-            <a href="#">Leia mais</a>
+            <a href="{% url 'blog:detail' post.slug %}">Leia mais</a>
         </div>
     </div>
     {% endfor %}
