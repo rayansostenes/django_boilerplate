@@ -6,7 +6,6 @@ class IndexView(ListView):
     template_name = 'blog/index.html'
     context_object_name = 'posts'
 
-
 class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/detalhe.html'
