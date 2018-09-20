@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 dj-database-url = "*"
+djangorestframework = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"
