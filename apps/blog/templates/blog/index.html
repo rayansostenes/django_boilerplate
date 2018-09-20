@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="height: 90px"></div>
+<div class="col-md-12">
+    {% for post in posts %}
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="pull-left">{{post.title}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            {{post.body | truncatewords:30}}
+            <a href="#">Leia mais</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
