@@ -76,7 +76,7 @@ target/
 *.pot
 *.pyc
 __pycache__/
-settings/local.py
+settings/local_settings.py
 
 .env
 db.sqlite3
